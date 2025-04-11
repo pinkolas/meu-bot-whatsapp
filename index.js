@@ -4,6 +4,7 @@ let banidos = [];
 
 venom
   .create({
+    session: 'session-boteco',
     headless: true,
     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
     logQR: true
