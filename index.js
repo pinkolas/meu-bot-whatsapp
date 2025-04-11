@@ -3,10 +3,14 @@ const venom = require('venom-bot');
 let banidos = [];
 
 venom
-  .create()
+  .create({
+    headless: true,
+    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+    logQR: true
+  })
   .then((client) => start(client))
   .catch((error) => {
-    console.log(error);
+    console.log("Erro ao iniciar o bot:", error);
   });
 
 function start(client) {
